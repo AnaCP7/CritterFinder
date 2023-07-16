@@ -55,6 +55,8 @@
             margin-left: 10px;
         }
 
+
+
     </style>
 </head>
 <body>
@@ -67,7 +69,26 @@
     </form>
     <div id="resultContainer"></div>
 
-
 </div>
+
+<script>
+           fetch("find-name").then(function(response) {
+        if (response.ok) {
+          return response.text();
+        }
+        throw new Error("Error al invocar el servlet");
+      })
+      .then(function(data) {
+        // Manejar la respuesta del servlet aquí
+        console.log(data);
+      })
+      .catch(function(error) {
+        // Manejar el error de la solicitud
+        console.log(error);
+      });
+
+
+    </script>
+
 </body>
 </html>
